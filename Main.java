@@ -1,27 +1,21 @@
-package labchirag;
+package main;
+
+import transport.Drone;
+import transport.EBike;
 
 public class Main {
-
 	public static void main(String[] args) {
-		Employee emp1 = new Employee("Chirag J", 59, 10000); //defining object
-		Employee emp2 = new Employee("Likith Raj", 60, 25000);
-		
-		//displaying details
-		System.out.println("Initial Employee Details are");
-		emp1.displayDetails();
-		emp2.displayDetails();
-		
-		emp1.increaseSalary(0);
-		emp2.increaseSalary(0);
-		
-		System.out.println("Updated Employee Details are");
-		
-		//updated details
-		emp1.displayDetails();
-		emp2.displayDetails();
-		
-		emp1.increaseSalary(0);
-		emp2.increaseSalary(0);
-	}
+        EBike e = new EBike("EB-101", 50);
+        e.deliver("Sandwich", "Library");
 
+
+        Drone d = new Drone("DR-1");
+        d.deliver("Notes", "ExamCell");  
+        d.deliver("USB", "CSE Block");    
+
+        double bill = d.cost(5);
+        System.out.println("Drone delivery cost: Rs." + bill);
+    }
 }
+
+	
