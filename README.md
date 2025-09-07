@@ -1,22 +1,44 @@
-Initial Employee Details are
-Employee ID Number:59
-Name:Chirag J
-Salary in Rs.10000.0
-Employee Details are as follows
-Employee ID Number:60
-Name:Likith Raj
-Salary in Rs.25000.0
-Employee Details are as follows
-Chirag J s salary is incresed by1000.0%
-Likith Raj s salary is incresed by2500.0%
-Updated Employee Details are
-Employee ID Number:59
-Name:Chirag J
-Salary in Rs.11000.0
-Employee Details are as follows
-Employee ID Number:60
-Name:Likith Raj
-Salary in Rs.27500.0
-Employee Details are as follows
-Chirag J s salary is incresed by1100.0%
-Likith Raj s salary is incresed by2750.0%
+Choose initialization:
+1.Empty Stack with size
+2.Stack initialized with array of Person
+2
+Enter the Number of persons:
+3
+Enter the name :
+chirag
+Enter the age :
+19
+Enter the gender :
+MALE
+Enter the name :
+mayuri
+Enter the age :
+33
+Enter the gender :
+FEMALE
+Enter the name :
+ranjith
+Enter the age :
+39
+Enter the gender :
+MALE
+
+ Menu
+1. Push one Person
+2. Push two persons
+3. Pop one Person
+4. Pop multiple Person
+5. Display all Person
+6. Display top n Person
+7. Exit
+Enter your choice:
+5
+Name is ranjith
+Age is 39
+Gender is MALE
+Name is mayuri
+Age is 33
+Gender is FEMALE
+Name is chirag
+Age is 19
+Gender is MALE
