@@ -1,88 +1,83 @@
-package StackPerson;
+package stackofbook;
 
 public class Stack {
-	private Person arr[];
+	private int arr[];
 	private int top;
 	private int capacity;
 	
-	//constructor1
-	Stack(int size){
+	
+	Stack(int size) {
 		capacity = size;
-		top=-1;
-		arr= new Person[capacity];
-	}
-	
-	//constructor2
-	Stack(Person[] inputArr) {
+		arr = new int[capacity];
+		top = -1;
+		}
+
+	Stack(int[] inputArr) {
 		capacity = inputArr.length;
-		arr = new Person[capacity];
-		for(int i=0 ; i<capacity ; i++) {
-			arr[i]=inputArr[i];
+		arr = new int[capacity];
+		for (int i = 0; i < capacity; i++) {
+			arr[i] = inputArr[i];
+			}
+		top = capacity - 1;
 		}
-		top=capacity-1;
-	}
 	
-	//pushing
-	void push(Person p) {
-		if(top == capacity-1) {
-			System.out.println("Stack Overflow");
-			return ;
+	void push(int x) {
+		if (top >= capacity - 1) {
+			System.out.println("Stack Overflow" + x);
+			return;
+			}
+		arr[++top] = x;
+		System.out.println("Pushed: " + x);
 		}
-		arr[++top]=p;
-	}
 	
-	//overloading push
-	void push(Person p1 , Person p2) {
-		push(p1);
-		push(p2);
-	}
+	void push(int x, int y) {
+		push(x);
+		push(y);
+		}
 	
-	//popping
-	Person pop() {
-		if(top == -1) {
+	int pop() {
+		if (top == -1) {
 			System.out.println("Stack Underflow");
-			return null;
+			return -1;
+			}
+		return arr[top--];
 		}
-		return arr[top--];	
-	}
 	
-	//overloading pop
 	void pop(int n) {
-		for(int i=0 ; i<n ; i++) {
-			Person p = pop();
-			if(p==null) 
-			break;
-			System.out.println("Popped the element");
-			p.displayPerson();
+		if (n <= 0) {
+			System.out.println("Invalid number of elements to pop");
+			return;
+			}
+		for (int i = 0; i < n; i++) {
+			int val = pop();
+			if (val == -1) break;
+			System.out.println("Popped: " + val);
+			}
 		}
-	}
 	
-	//displaying
-	void display(){
-		if(top == -1) {
+	void display() {
+		if (top == -1) {
 			System.out.println("Stack is empty");
-			return ;
+			return;
+			}
+		System.out.println("Stack contents (Top to Bottom):");
+		for (int i = top; i >= 0; i--) {
+			System.out.println(arr[i]);
+			}
 		}
-		for(int i=top ; i>=0 ; i--) {
-			arr[i].displayPerson();
-		}
-	}
 	
-	//overloading display
 	void display(int n) {
-		if(top==-1) {
+		if (top == -1) {
 			System.out.println("Stack is empty");
-			return ;
-		}
-		int count = Math.min(n, top+1);
-		for(int i=top ; i>top-count ; i--) {
-			arr[i].displayPerson();
+			return;
+			}
+		if (n <= 0) {
+			System.out.println("Invalid number of elements");
+			return;
+			}
+		System.out.println("Top " + n + " elements:");
+		for (int i = top; i >= 0 && i > top - n; i--) {
+			System.out.println(arr[i]);
+			}
 		}
 	}
-		
-}
-
-
-
-
-
