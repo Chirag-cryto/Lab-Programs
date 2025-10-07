@@ -1,21 +1,15 @@
-package main;
+package bankoperation;
 
-import transport.Drone;
-import transport.EBike;
-
-public class Main {
-	public static void main(String[] args) {
-        EBike e = new EBike("EB-101", 50);
-        e.deliver("Sandwich", "Library");
-
-
-        Drone d = new Drone("DR-1");
-        d.deliver("Notes", "ExamCell");  
-        d.deliver("USB", "CSE Block");    
-
-        double bill = d.cost(5);
-        System.out.println("Drone delivery cost: Rs." + bill);
-    }
-}
-
-	
+public class Main {  
+	public static void main(String[] args)  
+	{  
+		Bank bank = new Bank();  
+		bank.createAccount(3056, 5000);    
+		bank.createAccount(9944, 6700);  
+		bank.deposit(3056, 3000);  
+		bank.withdraw(9944, 500);  
+		System.out.println("Final balances:");  
+		bank.checkBalance(3056);  
+		bank.checkBalance(9944);  
+		}  
+	}  
